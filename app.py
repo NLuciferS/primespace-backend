@@ -23,10 +23,12 @@ app = FastAPI(title="PrimeSpace Demo API", version="1.0.0")
 
 
 def _origins():
-    raw = (os.getenv("FRONTEND_ORIGINS") or "").strip()
-    if raw:
-        return [o.strip() for o in raw.split(",") if o.strip()]
-    return ["http://127.0.0.1:5500", "http://localhost:5500", "null"]
+    return [
+        "https://nlucifers.github.io",
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+        "null",
+    ]
 
 
 app.add_middleware(
